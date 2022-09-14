@@ -1,0 +1,1 @@
+round(i-(round(i/5)*5))
