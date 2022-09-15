@@ -30,14 +30,14 @@ def timeInWords(h, m):
             elif m==15:
                 return(d[60-m]+' to one')
             else:
-                return(d[m]+' minutes past '+d[h])
+                return(d[m]+' minutes to one')
 
         if m>30 and m<40:
             return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to '+[h+1])
         elif m==15:
             return(d[60-m]+' to one')
         else:
-            return(d[m]+' minutes past '+d[h])
+            return(d[60-m]+' minutes to '+d[h+1])
 
 h = int(input().strip())
 
