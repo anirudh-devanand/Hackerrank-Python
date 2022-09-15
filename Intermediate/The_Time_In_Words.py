@@ -27,13 +27,13 @@ def timeInWords(h, m):
         if h==12:
             if m>30 and m<40:
                 return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to one')
-            elif m==15:
+            elif m==45:
                 return(d[60-m]+' to one')
             else:
                 return(d[m]+' minutes to one')
 
         if m>30 and m<40 and m !=45:
-            return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to '+[h+1])
+            return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to '+d[h+1])
         elif m==45:
             return(d[60-m]+' to '+d[h+1])
         else:
