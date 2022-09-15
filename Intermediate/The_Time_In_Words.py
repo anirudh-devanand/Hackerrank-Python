@@ -14,22 +14,30 @@ d = {
 
 def timeInWords(h, m):
     if m==0:
-        return(d[h]+' o\' clock')
+        return(d[h]+ ' o\' clock')
     if m<=30:
         if m>20 and m<30:
             return(d[m-m%10] + ' '+ d[m%10]+' minutes past '+d[h])
+        elif m==15 or m==30:
+            return(d[m]+' past '+d[h])
         else:
             return(d[m]+' minutes past '+d[h])
+
     else:
         if h==12:
             if m>30 and m<40:
                 return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to one')
+            elif m==15:
+                return(d[60-m]+' to one')
             else:
-                return(d[60-m]+' minutes to one')
+                return(d[m]+' minutes past '+d[h])
+
         if m>30 and m<40:
             return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to '+[h+1])
+        elif m==15:
+            return(d[60-m]+' to one')
         else:
-            return(d[60-m]+' minutes to '+d[h+1])
+            return(d[m]+' minutes past '+d[h])
 
 h = int(input().strip())
 
