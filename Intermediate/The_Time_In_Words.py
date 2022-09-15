@@ -9,12 +9,12 @@ d = {
     6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten',
     11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen',
     15: 'quarter', 16: 'sixteen', 17: 'seventeen', 18: 'eighteen',
-    19: 'nineteen', 20: 'twenty', 30: 'half', 0: 'o\'clock'
+    19: 'nineteen', 20: 'twenty', 30: 'half', 0: 'o\' clock'
     }
 
 def timeInWords(h, m):
     if m==0:
-        return(d[h]+' o\'clock')
+        return(d[h]+' o\' clock')
     if m<=30:
         if m>20 and m<30:
             return(d[m-m%10] + ' '+ d[m%10]+' minutes past '+d(h))
