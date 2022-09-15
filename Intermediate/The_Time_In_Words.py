@@ -17,7 +17,7 @@ def timeInWords(h, m):
         return(d[h]+' o\' clock')
     if m<=30:
         if m>20 and m<30:
-            return(d[m-m%10] + ' '+ d[m%10]+' minutes past '+d(h))
+            return(d[m-m%10] + ' '+ d[m%10]+' minutes past '+d[h])
         else:
             return(d[m]+' minutes past '+d[h])
     else:
