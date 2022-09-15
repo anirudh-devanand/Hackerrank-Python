@@ -15,6 +15,9 @@ d = {
 def timeInWords(h, m):
     if m==0:
         return(d[h]+ ' o\' clock')
+    elif m==1:
+        return(d[m]+' minute past '+d[h])
+
     if m<=30:
         if m>20 and m<30:
             return(d[m-m%10] + ' '+ d[m%10]+' minutes past '+d[h])
@@ -25,6 +28,11 @@ def timeInWords(h, m):
 
     else:
         if h==12:
+            if m==0:
+                return(d[h]+ ' o\' clock')
+            elif m==1:
+                return(d[m]+' minute past '+d[h])
+
             if m>30 and m<40:
                 return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to one')
             elif m==45:
