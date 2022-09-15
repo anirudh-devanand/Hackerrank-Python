@@ -13,30 +13,28 @@ d = {
     }
 
 def timeInWords(h, m):
+    if m==0:
+        return(d[h]+' o\'clock')
     if m<=30:
         if m>20 and m<30:
-            print(d[m-m%10] + ' '+ d[m%10]+'minutes past '+d[h])
+            return(d[m-m%10] + ' '+ d[m%10]+' minutes past '+d(h))
         else:
-            print(d[m]+'minutes past '+d(h))
+            return(d[m]+' minutes past '+d[h])
     else:
         if h==12:
-            if m>40 and m<60:
-                print(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+'minutes to one')
+            if m>30 and m<40:
+                return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to one')
             else:
-                print(d[60-m]+'minutes to one')
-        if m>40 and m<60:
-            print(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+'minutes to '+[h+1])
+                return(d[60-m]+' minutes to one')
+        if m>30 and m<40:
+            return(d[(60-m)-((60-m)%10)] + ' '+ d[(60-m)%10]+' minutes to '+[h+1])
         else:
-            print(d[60-m]+'minutes to '+d[h+1])
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+            return(d[60-m]+' minutes to '+d[h+1])
 
-    h = int(input().strip())
+h = int(input().strip())
 
-    m = int(input().strip())
+m = int(input().strip())
 
-    result = timeInWords(h, m)
+result = timeInWords(h, m)
 
-    fptr.write(result + '\n')
-
-    fptr.close()
+print(result + '\n')
