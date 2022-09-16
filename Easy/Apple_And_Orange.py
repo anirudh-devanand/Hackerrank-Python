@@ -7,12 +7,12 @@ import sys
 def countApplesAndOranges(s, t, a, b, apples, oranges):
     ap=0
     for i in apples:
-        if a+i >= s and a+1 <=t:
+        if a+i >= s and a+i <=t:
             ap+=1
     print(ap)
     ora=0
     for i in oranges:
-        if b+i >= s and b+1 <=t:
+        if b+i >= s and b+i <=t:
             ora+=1
     print(ora)
 
