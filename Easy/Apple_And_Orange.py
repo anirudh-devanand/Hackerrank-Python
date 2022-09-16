@@ -15,7 +15,7 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
         if b+i >= s and b+1 <=t:
             ora+=1
     ans+=str(ora)
-    return(s)
+    return(ans)
 
 if __name__ == '__main__':
     first_multiple_input = input().rstrip().split()
