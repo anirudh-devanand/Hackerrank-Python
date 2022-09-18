@@ -1,19 +1,9 @@
-#!/bin/python3
-
 import math
 import os
 import random
 import re
 import sys
 
-#
-# Complete the 'getTotalX' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER_ARRAY a
-#  2. INTEGER_ARRAY b
-#
 def getFact(s):
     arr=[]
     for j in s:
@@ -24,6 +14,7 @@ def getFact(s):
         arr=arr.append(ar)
     return(ar)
 
+    
 def getCommon(s):
     for i in range (len(s)-1):
         ar=[]
@@ -34,9 +25,13 @@ def getCommon(s):
     return(s[-1])
             
     
-    
-    
 def getTotalX(a, b):
+    ans=0
+    facts=getFact(getCommon(getFact(b)))
+    for i in facts:
+        if i in a:
+            ans+=1       
+    return(ans)
     
 
 if __name__ == '__main__':
