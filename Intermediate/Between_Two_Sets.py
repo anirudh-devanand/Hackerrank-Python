@@ -8,7 +8,7 @@ def getFact(s):
     arr=[]
     for j in s:
         ar=[1]
-        for i in range(2,(s+1)):
+        for i in range(2,len(s)+1):
             if s%1==0:
                 ar=ar.append(i)
         arr=arr.append(ar)
