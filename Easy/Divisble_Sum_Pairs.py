@@ -6,11 +6,9 @@ import sys
 
 def divisibleSumPairs(n, k, ar):
     ans=0
-    ar=ar[::-1]
-    print(ar)
-    for i in ar:
-        for j in range(i+1, len(ar)):
-            if i+ar[j]==k:
+    for i in range(n):
+        for j in range(i+1, n):
+            if (ar[i]+ar[j])%k==0:
                 ans+=1
                 
     return(ans)
