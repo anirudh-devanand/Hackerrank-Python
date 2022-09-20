@@ -7,12 +7,13 @@ import sys
 def migratoryBirds(arr):
     bid=arr[0]
     count=0
-    for i in arr:
-        if arr.count(i)==count:
+    ar={i for i in arr}
+    for i in ar:
+        if arr.count(i)>count:
+            bid=i
+        elif arr.count(i)==count:
             if i<bid:
                 bid=i
-        elif arr.count(i)>count:
-            bid=i
         count=max(arr.count(i),count)
     return(bid)
 
