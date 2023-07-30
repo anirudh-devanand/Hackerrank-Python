@@ -1,0 +1,1 @@
+This repository is a collection of my soultions to the various HackerRank problems solved with python. Please take note that these problems are by how challenginf they were for me as I was learning to code in python.
